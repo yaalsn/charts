@@ -72,6 +72,7 @@ function release::update_chart_index() {
 }
 
 function release::publish_charts() {
+  cp --force ${CHARTS_INDEX}/index.yaml index.yaml
   cat index.yaml
 #    git config user.email "${GITEMAIL}"
 #    git config user.name "${GITUSER}"
