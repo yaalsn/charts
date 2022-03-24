@@ -49,14 +49,13 @@ jobs:
         with:
           ref: branch-${{ github.event.inputs.chart }}-${{ github.event.inputs.branch }}
 
-      - name: Checkout to release branch
-        run: git checkout -b release-${{ github.event.inputs.chart }}-${{ github.event.inputs.release }}
-
       - name: Upgrade chart to release version
         run: sed -ri 's/version:\ [0-9]+\.[0-9]+\.[0-9]+/version:\ ${{ github.event.inputs.release }}/' charts/${{ github.event.inputs.chart }}/Chart.yaml
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
+        with:
+          branch: release-${{ github.event.inputs.chart }}-${{ github.event.inputs.release }}
 
       - name: Install chart
         env:
