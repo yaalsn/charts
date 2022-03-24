@@ -56,6 +56,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: release-${{ github.event.inputs.chart }}-${{ github.event.inputs.release }}
+          title: Bump ${{ github.event.inputs.chart }} chart version to ${{ github.event.inputs.release }}
 
       - name: Install chart
         env:
