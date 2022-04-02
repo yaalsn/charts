@@ -65,7 +65,7 @@ function release::package_chart() {
 function release::upload_packages() {
     echo "Uploading charts..."
     echo ${RELEASE_BRANCH}
-    ${CR} upload --owner ${OWNER} --git-repo ${REPO} -c ${RELEASE_BRANCH} -t ${GITHUB_TOKEN} --package-path /cr/.chart-packages --release-name-template "{{ .Name }}-{{ .Version }}"
+    ${CR} upload --owner ${OWNER} --git-repo ${REPO} -t ${GITHUB_TOKEN} --commit ${RELEASE_BRANCH} --package-path /cr/.chart-packages --release-name-template "{{ .Name }}-{{ .Version }}"
 }
 
 function release::update_chart_index() {
