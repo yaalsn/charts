@@ -32,6 +32,7 @@ PUBLISH_CHARTS=${PUBLISH_CHARTS:-"false"}
 GITUSER=${GITUSER:-"UNSET"}
 GITEMAIL=${GITEMAIL:-"UNSET"}
 CHART="$1"
+RELEASE_BRANCH="$2"
 
 # hack/common.sh need this variable to be set
 PULSAR_CHART_HOME=${CHARTS_HOME}
