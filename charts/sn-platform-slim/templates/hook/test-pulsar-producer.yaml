@@ -13,7 +13,11 @@ spec:
         - name: pulsar-producer
           image: "bitnami/kubectl"
           args:
-            - "kubectl exec -n sn-platform-test sn-platform-slim-toolset-0 -- bin/pulsar-admin clusters list"
+            - "/bin/sh"
+            - "-c"
+            - |
+              kubectl exec -n sn-platform-test sn-platform-slim-toolset-0 -- bin/pulsar-admin clusters list ; \
+              kubectl get pods -n sn-platform-test
       restartPolicy: Never
   backoffLimit: 2
 {{- end }}
