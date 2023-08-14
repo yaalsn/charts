@@ -114,6 +114,13 @@ monitoring:
   # monitoring - datadog
   datadog: false
 
+### Test Cases
+##
+## Control what test cases to run after deploying sn-platform-slim 
+test:
+  pulsar-producer: true
+
+
 ## Images
 ##
 ## Control what images to use for each component
