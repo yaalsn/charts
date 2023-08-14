@@ -117,8 +117,8 @@ monitoring:
 ### Test Cases
 ##
 ## Control what test cases to run after deploying sn-platform-slim 
-test:
-  pulsar-producer: true
+hook:
+  test_pulsar_producer: true
 
 
 ## Images
