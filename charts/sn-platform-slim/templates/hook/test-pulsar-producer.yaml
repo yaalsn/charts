@@ -13,8 +13,6 @@ spec:
         - name: pulsar-producer
           image: "bitnami/kubectl"
           args:
-            - "/bin/sh"
-            - "-c"
             - "kubectl exec -n sn-platform-test sn-platform-slim-toolset-0 -- bin/pulsar-admin clusters list"
       restartPolicy: Never
   backoffLimit: 2
