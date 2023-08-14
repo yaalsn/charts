@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: test-pulsar-producer
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+      - name: pulsar-producer
+        image: "bitnami/kubectl"
+        command: ["/bin/sh", "-c"]
+        args:
+          - kubectl exec -n sn-platform-test sn-platform-slim -toolset-0 -- bin/pulsar-admin clusters list
+      restartPolicy: Never
+  backoffLimit: 2
