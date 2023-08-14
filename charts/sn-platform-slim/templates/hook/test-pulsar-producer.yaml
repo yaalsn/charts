@@ -8,6 +8,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccountName: {{ template "pulsar.fullname" . }}-hook-serviceaccount
       containers:
         - name: pulsar-producer
           image: "bitnami/kubectl"
