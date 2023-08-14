@@ -13,7 +13,7 @@ spec:
           image: "bitnami/kubectl"
           command: [ "/bin/sh", "-c" ]
           args:
-            - "kubectl exec -n sn-platform-test sn-platform-slim -toolset-0 -- bin/pulsar-admin clusters list"
+            - "kubectl exec -n sn-platform-test sn-platform-slim-toolset-0 -- bin/pulsar-admin clusters list"
       restartPolicy: Never
   backoffLimit: 2
 {{- end }}
